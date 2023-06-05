@@ -2,8 +2,6 @@
 
 A repository that collects various OpenAI tools and resources to help developers use OpenAI's technology and services more conveniently.
 
-<br><br>
-
 ### OpenAI Official Links
 
 | Name                                                  | Description                                        |
