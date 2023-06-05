@@ -1,6 +1,12 @@
 # Installing TensorFlow 2.12 and PyTorch 2.0
 
-Machine learning has become one of the most promising fields in the technology industry. With the ability to automate decision-making processes, machine learning is changing the way businesses and organizations operate. TensorFlow and PyTorch are two of the most popular deep learning frameworks in the machine learning community. They provide a wide range of functionalities, from building and training neural networks to deploying them on various platforms. In this tutorial, we will guide you through the installation process of TensorFlow 2.12 and PyTorch 2.0 on Ubuntu 22.04. Additionally, we will cover the installation of CUDA and cuDNN, which are necessary components for running machine learning applications on NVIDIA GPUs. So, whether you are a beginner or an experienced developer, this tutorial will provide you with a step-by-step guide to get started with deep learning on Ubuntu. We have chosen the latest version of Pytorch, TensorFlow and Ununtu.
+Machine learning has emerged as one of the most promising fields in the tech industry. With the ability to automate decision-making
+processes, machine learning is transforming the way businesses and organizations operate. TensorFlow and PyTorch are two of the most widely
+used deep learning frameworks in the machine learning community, offering a range of functionalities from building and training neural
+networks to deploying them on various platforms. In this tutorial, we will guide you through the process of installing TensorFlow 2.6 and
+PyTorch 1.9 on Ubuntu 20.04 LTS. We will also cover the installation of CUDA and cuDNN, which are essential components for running machine
+learning applications on NVIDIA GPUs. Whether you are a beginner or an experienced developer, this tutorial provides a step-by-step guide to
+get started with deep learning on Ubuntu using the latest versions of Pytorch, TensorFlow and Ubuntu.
 
 **Step 1: Update the Ubuntu system and install the necessary packages**
 
@@ -13,7 +19,9 @@ $ sudo apt-get install manpages-dev
 $ sudo apt install gcc
 ```
 
-The ```build-essential``` package contains the necessary tools to compile and build software from source code. The ```manpages-dev``` package provides the manual pages for developers. The ```gcc``` package is the GNU Compiler Collection, which is needed for building and running C programs.
+The ```build-essential``` package contains the necessary tools to compile and build software from source code. The ```manpages-dev```
+package provides the manual pages for developers. The ```gcc``` package is the GNU Compiler Collection, which is needed for building and
+running C programs.
 
 **Step 2: Install CUDA and configure the environment variables**
 
@@ -21,7 +29,8 @@ First install the NVIDIA driver from additional drivers and choose the one i hav
 
 ![resnet](./img/driver1.jpg)
 
-Next, download the CUDA toolkit from the official website. As of this writing, the latest version is CUDA 11.8.0. Download the runfile installer for Linux x86_64 and save it to a convenient location.
+Next, download the CUDA toolkit from the official website. As of this writing, the latest version is CUDA 11.8.0. Download the runfile
+installer for Linux x86_64 and save it to a convenient location.
 
 You can directly download via wget
 
@@ -38,7 +47,8 @@ In the terminal, navigate to the directory where the installer is located and ru
 $ sudo sh cuda_11.8.0_520.61.05_linux.run
 ```
 
-During the installation process, you will be prompted to accept the license agreement, choose the installation directory, and select the components to install. Follow the prompts and only install CUDA Toolkit 11.8
+During the installation process, you will be prompted to accept the license agreement, choose the installation directory, and select the
+components to install. Follow the prompts and only install CUDA Toolkit 11.8
 
 ![resnet](./img/driver.jpg)
 
@@ -57,11 +67,14 @@ $ export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64${LD_LIBRARY_PATH:+:${LD_LIBR
 
 **Step 3: Install cuDNN and configure the environment variables**
 
-Download the cuDNN library from the NVIDIA website. You need to create an account there. Make sure to download the version that corresponds to your CUDA version. As of this writing, the latest version is cuDNN 8.6.0.163 for CUDA 11.8.
+Download the cuDNN library from the NVIDIA website. You need to create an account there. Make sure to download the version that corresponds
+to your CUDA version. As of this writing, the latest version is cuDNN 8.6.0.163 for CUDA 11.8.
 
-You can download from this [link](https://developer.download.nvidia.com/compute/redist/cudnn/v8.6.0/local_installers/11.8/cudnn-linux-x86_64-8.6.0.163_cuda11-archive.tar.xz).
+You can download from
+this [link](https://developer.download.nvidia.com/compute/redist/cudnn/v8.6.0/local_installers/11.8/cudnn-linux-x86_64-8.6.0.163_cuda11-archive.tar.xz).
 
-I will recommend open **Download cuDNN v8.6.0 (October 3rd, 2022), for CUDA 11.x** sectionand then download **Local Installer for Linux x86_64 (Tar)**
+I will recommend open **Download cuDNN v8.6.0 (October 3rd, 2022), for CUDA 11.x** sectionand then download **Local Installer for Linux
+x86_64 (Tar)**
 
 After downloading the archive, extract it using the following command:
 
@@ -87,7 +100,8 @@ Set the file permissions:
 $ sudo chmod a+r /usr/local/cuda-11.8/include/cudnn*.h /usr/local/cuda-11.8/lib64/libcudnn*
 ```
 
-Now restart your system using ```sudo reboot``` and in terminal type ```NVCC --version``` to see if everything installed properly otherwise it gives error NVCC not found
+Now restart your system using ```sudo reboot``` and in terminal type ```NVCC --version``` to see if everything installed properly otherwise
+it gives error NVCC not found
 
 **Step 4: Create a virtual environment and install Python packages**
 
@@ -115,6 +129,7 @@ Install tensorflow and Pytorch
 $ pip3 install tensorflow==2.12.0
 $ pip3 install torch torchvision torchaudio
 ```
+
 **Note:**
 
 ```bash
